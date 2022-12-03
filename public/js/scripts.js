@@ -1,29 +1,43 @@
-const cardList = [
-    {
-        title: "Marines Mumbai",
-        image: "images/marines.jpg",
-        link: "Marines, Mumbai",
-        desciption: "All about Marines!"
-    },
-    {
-        title: "India",
-        image: "images/Mumbai,India.jpg",
-        link: "India",
-        desciption: "All about Mumbai, India"
-    }
-]
+
+
+const getProjects = () => {
+    $.get('/api/projects',(response) => {
+        if(response.statusCode==200){
+            addCards(response.data);
+        }
+    })
+  }
+
+
 const clickMe = () => {
     alert("Thanks for clicking me. Hope you have a nice day!")
 }
-const submitForm = () => {
-    let formData = {};
-    formData.first_name = $('#first_name').val();
-    formData.last_name = $('#last_name').val();
-    formData.password = $('#password').val();
-    formData.email = $('#email').val();
 
-    console.log("Form Data Submitted: ", formData);
+const submitForm = () => {
+  let formData = {};
+  formData.title = $('#title').val();
+  formData.image = $('#image').val();
+  formData.link = $('#link').val();
+  formData.description = $('#description').val();
+
+  console.log("Form Data Submitted: ", formData);
+  addProjectToApp(formData);
 }
+
+//ajax function...
+const addProjectToApp = (project) => {
+  $.ajax({
+      url: '/api/projects',
+      data: project,
+      type: 'POST',
+      success: (result) => {
+          alert(result.message);
+          location.reload(); // it automatically reloads the page ​
+
+      }
+  })
+}
+
 const addCards = (items) => {
     items.forEach(item => {
         let itemToAppend = '<div class="col s4 center-align">'+
@@ -43,7 +57,7 @@ $(document).ready(function(){
     $('#formSubmit').click(()=>{
         submitForm();
     })
-    addCards(cardList);
+    getProjects();
     $('.modal').modal();
   });
 
