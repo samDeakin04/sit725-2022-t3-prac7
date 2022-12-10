@@ -1,8 +1,8 @@
-let client = reqiure("../dbConnect");
+let client = reqiure("./dbConnect");
 let projectCollection;
 
 setTimeout(()=> {
-    projectCollection = client.mongoClient.db().collection("Projects");
+    projectCollection = client.db().collection("Projects");
 }, 2000)
 
 const insertProjects = (project,callback) => {
