@@ -14,7 +14,7 @@ let controller = require("../controller")
 // }
 
 //post api...
-router.post('/',(req,res) => {
+router.post('/api/projects',(req,res) => {
     controller.projectController.createProjects(req, res)
     // console.log("New Project added", req.body)
     // var newProject = req.body;
@@ -34,7 +34,7 @@ router.post('/',(req,res) => {
 //  projectCollection.find({}).toArray(callback);
 //}
 
-router.get('/',(req,res) => {
+router.get('/api/projects',(req,res) => {
     controller.projectController.retrieveProjects(req,res)
     // getProjects((err,result) => {
     //     if(err) {
