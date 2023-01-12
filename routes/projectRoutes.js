@@ -15,7 +15,7 @@ let controller = require("../controller")
 
 //post api...
 router.post('/',(req,res) => {
-    controller.projectController.createProjects(req. res)
+    controller.projectController.createProjects(req, res)
     // console.log("New Project added", req.body)
     // var newProject = req.body;
     // insertProjects(newProject,(err,result) => {

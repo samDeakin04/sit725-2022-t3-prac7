@@ -10,7 +10,7 @@ const getProjects = () => {
 
 
 const clickMe = () => {
-    alert("Thanks for clicking me. Hope you have a nice day!")
+    alert("Thanks for clicking me. Hope you have a good day!")
 }
 
 const submitForm = () => {

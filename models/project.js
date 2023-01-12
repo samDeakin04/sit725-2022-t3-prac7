@@ -1,4 +1,4 @@
-let client = reqiure("./dbConnect");
+let client = require("../dbConnect");
 let projectCollection;
 
 setTimeout(()=> {

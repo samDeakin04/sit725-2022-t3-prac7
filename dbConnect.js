@@ -5,7 +5,8 @@ const MongoClient = require('mongodb').MongoClient;
 const uri = 'mongodb+srv://Sam:Hello123@cluster0.ppvmpe6.mongodb.net/?retryWrites=true&w=majority'
 const client = new MongoClient(uri, {useNewUrlParser: true})
 
-client.connect((err,db) => {
+client.connect ((err,db) => {
+  
     if(!err) {
         console.log('MongoDB Connected')
     }
