@@ -5,11 +5,13 @@ let projectCollection;
 let dbConnect = require("./dbConnect");
 let projectRoutes = require("./routes/projectRoutes");
 
+
 app.use(express.static(__dirname+'/public'))
 app.use(express.json());
 app.use(express.urlencoded({extends: false}));
 app.use(cors())
 app.use('/api/projects', projectRoutes)
+
 
 //mongoDb connection...
 //const MongoClient = require('mongodb').MongoClient;

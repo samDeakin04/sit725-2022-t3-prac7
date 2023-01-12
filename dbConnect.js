@@ -15,4 +15,4 @@ client.connect ((err,db) => {
         process.exit(1);
     }
 })
-module.MongoClient = client;
+module.exports = client;
